@@ -39,7 +39,7 @@ class RadioTest {
 
     @Test
     public void prevStationMin() {
-        radio.setMaxRadioStation(91);   // (9)
+        radio.setMaxRadioStation(9);
         radio.setMinRadioStation(0);
         assertEquals(9, radio.reduceStation(0));
     }
@@ -67,8 +67,8 @@ class RadioTest {
 
     @Test
     public void shouldSetVolume() {
-        radio.setMaxVolume(110);   // (10)
-        radio.setMinVolume(10);    // (0)
+        radio.setMaxVolume(10);
+        radio.setMinVolume(0);
         radio.setCurrentVolume(5);
         assertEquals(5, radio.getCurrentVolume());
     }
@@ -98,8 +98,8 @@ class RadioTest {
 
     @Test
     public void nextVolumeMax() {
-        radio.setMaxVolume(110);   // (10)
-        radio.setMinVolume(011);   // (0)
+        radio.setMaxVolume(10);
+        radio.setMinVolume(0);
         assertEquals(10, radio.increaseVolume(10));
     }
 
