@@ -3,11 +3,39 @@ package ru.netology.domain;
 public class Radio {
     private String name;
     private int currentRadioStation;
-    private final int minRadioStation = 0;
-    private final int maxRadioStation = 10;
+    private int minRadioStation = 0;
+    private int maxRadioStation = 10;
     private int currentVolume;
-    private final int maxVolume = 100;
-    private final int minVolume = 0;
+    private int maxVolume = 100;
+    private int minVolume = 0;
+
+
+    public Radio(String name, int currentRadioStation, int minRadioStation, int maxRadioStation) {
+        this.name = name;
+        this.currentRadioStation = currentRadioStation;
+        this.minRadioStation = minRadioStation;
+        this.maxRadioStation = maxRadioStation;
+    }
+
+    public Radio() {
+
+    }
+
+    public Radio(String name, int currentRadioStation, int minRadioStation, int maxRadioStation, int currentVolume, int maxVolume, int minVolume) {
+        this.name = name;
+        this.currentRadioStation = currentRadioStation;
+        this.minRadioStation = minRadioStation;
+        this.maxRadioStation = maxRadioStation;
+        this.currentVolume = currentVolume;
+        this.maxVolume = maxVolume;
+        this.minVolume = minVolume;
+    }
+
+    public Radio(int currentVolume, int maxVolume, int minVolume) {
+        this.currentVolume = currentVolume;
+        this.maxVolume = maxVolume;
+        this.minVolume = minVolume;
+    }
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -15,22 +43,13 @@ public class Radio {
 
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume > maxVolume) {
-            return;
+            currentVolume = maxVolume;
         }
         if (currentVolume < minVolume) {
-            return;
+            currentVolume = minVolume;
         }
         this.currentVolume = currentVolume;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
@@ -38,10 +57,10 @@ public class Radio {
 
     public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation > maxRadioStation) {
-            return;
+            currentRadioStation = minRadioStation;
         }
         if (currentRadioStation < minRadioStation) {
-            return;
+            currentRadioStation = maxRadioStation;
         }
         this.currentRadioStation = currentRadioStation;
     }
