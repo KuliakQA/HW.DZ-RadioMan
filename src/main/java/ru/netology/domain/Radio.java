@@ -4,9 +4,9 @@ public class Radio {
     private String name;
     private int currentRadioStation;
     private final int minRadioStation = 0;
-    private final int maxRadioStation = 9;
+    private final int maxRadioStation = 10;
     private int currentVolume;
-    private final int maxVolume = 10;
+    private final int maxVolume = 100;
     private final int minVolume = 0;
 
     public int getCurrentVolume() {
