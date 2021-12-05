@@ -146,4 +146,5 @@ class RadioTest {
         assertEquals(100, radio.getCurrentVolume());
         assertEquals(0, radio.getCurrentRadioStation());
     }
+
 }

@@ -86,6 +86,5 @@ public class Radio {
             currentVolume = minVolume;
         } else
         currentVolume --;
-
     }
 }
